@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         setLoyalCup()
     }
 
-    fun setLoyalCup() {
+    private fun setLoyalCup() {
         val loyalCup = this.resources.getInteger(R.integer.loyal_cup)
         when (loyalCup) {
             8 -> {
@@ -111,5 +111,21 @@ class MainActivity : AppCompatActivity() {
 
     fun details(view: View) {
         Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show()
+    }
+
+    fun increaseDetail(view: View) {
+
+    }
+
+    fun decreaseDetail(view: View) {
+
+    }
+
+    fun setOption(view: View) {
+
+    }
+
+    fun addToCart(view: View) {
+
     }
 }
