@@ -3,4 +3,341 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp">
+
+        <ImageButton
+            android:id="@+id/back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_icon"
+            style="?android:borderlessButtonStyle"
+            android:layout_alignParentLeft="true"
+            android:onClick="goToHomePage"
+            android:contentDescription="Back to Home Icon"/>
+
+        <TextView
+            android:id="@+id/text_my_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Cart"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="20dp"
+            android:layout_below="@id/back_icon"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="33dp"/>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_my_cart">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="33dp"
+                android:layout_marginRight="33dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/drink_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="20dp"
+                        android:scaleX="0.75"
+                        android:scaleY="0.75"
+                        android:src="@drawable/americano" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="110dp"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/drink_1_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Americano"
+                            android:textSize="12dp"
+                            android:textColor="@color/drink_name"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                        <TextView
+                            android:id="@+id/drink_1_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Single | iced | medium | full ice"
+                            android:textSize="10dp"
+                            android:textColor="@color/drink_description"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                        <TextView
+                            android:id="@+id/drink_1_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="X 1"
+                            android:textSize="12dp"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/price_drink_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="$3.00"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="0dp"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/drink_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="20dp"
+                        android:scaleX="0.75"
+                        android:scaleY="0.75"
+                        android:src="@drawable/cappuccino" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="110dp"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/drink_2_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Cappuccino"
+                            android:textSize="12dp"
+                            android:textColor="@color/drink_name"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                        <TextView
+                            android:id="@+id/drink_2_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Single | iced | medium | full ice"
+                            android:textSize="10dp"
+                            android:textColor="@color/drink_description"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                        <TextView
+                            android:id="@+id/drink_2_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="X 1"
+                            android:textSize="12dp"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/price_drink_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="$3.00"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="0dp"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/drink_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="20dp"
+                        android:scaleX="0.75"
+                        android:scaleY="0.75"
+                        android:src="@drawable/flat_white" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="110dp"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/drink_3_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Flat White"
+                            android:textSize="12dp"
+                            android:textColor="@color/drink_name"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                        <TextView
+                            android:id="@+id/drink_3_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Single | iced | medium | full ice"
+                            android:textSize="10dp"
+                            android:textColor="@color/drink_description"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                        <TextView
+                            android:id="@+id/drink_3_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="X 1"
+                            android:textSize="12dp"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/price_drink_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="$3.00"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/action_menu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Total amount"
+                    android:textColor="@color/faded_white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="$9.00"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/action_checkout"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_border_3"
+                android:paddingTop="15dp"
+                android:paddingLeft="30dp"
+                android:paddingBottom="15dp"
+                android:onClick="addToCart"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/checkout"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Checkout"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

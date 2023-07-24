@@ -237,26 +237,26 @@
                     android:layout_centerInParent="true">
 
                     <ImageButton
-                        android:id="@+id/option_not_take_away"
+                        android:id="@+id/option_hot"
                         style="?android:borderlessButtonStyle"
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/not_take_away"
+                        android:contentDescription="Take away"
                         android:onClick="setOption"
-                        android:contentDescription="Take away"/>
+                        android:src="@drawable/hot" />
 
                     <ImageButton
-                        android:id="@+id/option_take_away"
+                        android:id="@+id/option_ice"
                         style="?android:borderlessButtonStyle"
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/take_away_selected"
+                        android:contentDescription="Take away"
                         android:onClick="setOption"
-                        android:contentDescription="Take away"/>
+                        android:src="@drawable/ice_selected" />
 
                 </RelativeLayout>
 
@@ -361,9 +361,9 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/ice_little"
+                        android:contentDescription="Little ice"
                         android:onClick="setOption"
-                        android:contentDescription="Little ice"/>
+                        android:src="@drawable/ice_little" />
 
                     <ImageButton
                         android:id="@+id/option_ice_medium"
@@ -398,6 +398,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true">
 
@@ -426,12 +427,12 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="70dp"
+            android:layout_above="@id/action_add_to_cart"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:layout_above="@id/action_add_to_cart">
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="90dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -439,10 +440,10 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:textStyle="bold"
                 android:text="Total amount"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/total_amount"
