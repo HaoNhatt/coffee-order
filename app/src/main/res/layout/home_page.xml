@@ -217,6 +217,7 @@
             android:layout_marginLeft="31dp"/>
 
         <ScrollView
+            android:id="@+id/coffee_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="26dp"
@@ -224,7 +225,151 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="106dp">
 
+            <GridLayout
+                android:id="@+id/grid_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="5"
+                android:columnCount="2"
+                android:orientation="horizontal">
 
+                <RelativeLayout
+                    android:id="@+id/americano"
+                    android:layout_width="154dp"
+                    android:layout_height="164dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/drink_border"
+                    android:onClick="details"
+                    android:paddingTop="20dp"
+                    android:paddingRight="22dp"
+                    android:paddingLeft="22dp"
+                    android:paddingBottom="20dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/americano"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Americano"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cappuccino"
+                    android:layout_width="154dp"
+                    android:layout_height="164dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/drink_border"
+                    android:onClick="details"
+                    android:paddingTop="20dp"
+                    android:paddingRight="22dp"
+                    android:paddingLeft="22dp"
+                    android:paddingBottom="20dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/cappuccino"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cappuccino"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mocha"
+                    android:layout_width="154dp"
+                    android:layout_height="164dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/drink_border"
+                    android:onClick="details"
+                    android:paddingTop="20dp"
+                    android:paddingRight="22dp"
+                    android:paddingLeft="22dp"
+                    android:paddingBottom="20dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mocha"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mocha"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/flat_white"
+                    android:layout_width="154dp"
+                    android:layout_height="164dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/drink_border"
+                    android:onClick="details"
+                    android:paddingTop="20dp"
+                    android:paddingRight="22dp"
+                    android:paddingLeft="22dp"
+                    android:paddingBottom="20dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/flat_white"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Flat White"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+            </GridLayout>
 
         </ScrollView>
 

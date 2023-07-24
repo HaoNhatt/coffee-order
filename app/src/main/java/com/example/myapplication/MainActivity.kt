@@ -2,6 +2,8 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,26 +20,34 @@ class MainActivity : AppCompatActivity() {
 //        repeat(4) {
 //            Thread.sleep(3000L)
 //        }
-        goToHomePage()
+        loadHomePage()
     }
 
-    private fun goToHomePage() {
+    private fun loadHomePage() {
         setContentView(R.layout.home_page)
     }
 
-    fun goToCart() {
+    private fun goToHomePage(view: View) {
+        loadHomePage()
+    }
+
+    fun goToCart(view: View) {
 
     }
 
-    fun goToProfile() {
+    fun goToProfile(view: View) {
 
     }
 
-    fun goToReward() {
+    fun goToReward(view: View) {
 
     }
 
-    fun goToMyOrder() {
+    fun goToMyOrder(view: View) {
 
+    }
+
+    fun details(view: View) {
+        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show()
     }
 }
