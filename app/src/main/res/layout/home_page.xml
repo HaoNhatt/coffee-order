@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/home_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="26dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good morning"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/faded_white"/>
+
+                <TextView
+                    android:id="@+id/greeting_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User name"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/buy"
+                    android:layout_marginRight="-30dp"
+                    android:onClick="goToCart"
+                    style="?android:borderlessButtonStyle"
+                    android:contentDescription="Go to Cart"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profile"
+                    android:onClick="goToProfile"
+                    style="?android:borderlessButtonStyle"
+                    android:contentDescription="Go to Profile"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loyalCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/home_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/layout_border_1"
+            android:paddingBottom="15dp">
+
+            <LinearLayout
+                android:id="@+id/loyalCard_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/loyalCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="25dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="19"
+                    android:text="Loyalty card"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4 / 8"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/loyalCard_heading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginRight="11dp"
+                android:background="@drawable/loyal_card_border"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="11dp"
+                android:paddingRight="11dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cup_on"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cup_on"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cup_on"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cup_on"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cup_off"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cup_off"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cup_off"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cup_off"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/loyalCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/layout_border_2"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose your coffee"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="31dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="106dp">
+
+
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/navigator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/main_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="-89dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:background="@drawable/navigator_border"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="11dp"
+            android:paddingRight="11dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_selected_icon"
+                android:layout_weight="1"
+                android:onClick="goToHomePage"
+                style="?android:borderlessButtonStyle"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/reward_icon"
+                android:layout_weight="1"
+                android:onClick="goToReward"
+                style="?android:borderlessButtonStyle"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/my_order_icon"
+                android:layout_weight="1"
+                android:onClick="goToMyOrder"
+                style="?android:borderlessButtonStyle"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
