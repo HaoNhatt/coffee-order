@@ -1,13 +1,21 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Rect
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
+//    var myCart =
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,7 +25,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadSplashscreen() {
         setContentView(R.layout.splash_screen)
-        //setup variable
 
 //        repeat(4) {
 //            Thread.sleep(3000L)
@@ -89,16 +96,16 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.loyal_cup).text = "$loyalCup / 8"
     }
 
-    private fun goToHomePage(view: View) {
+    fun goToHomePage(view: View) {
         loadHomePage()
     }
 
     fun goToCart(view: View) {
-
+        setContentView(R.layout.my_cart)
     }
 
     fun goToProfile(view: View) {
-
+        setContentView(R.layout.profile)
     }
 
     fun goToReward(view: View) {
@@ -106,11 +113,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToMyOrders(view: View) {
-
+        setContentView(R.layout.my_order)
     }
 
     fun details(view: View) {
-        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show()
+        setContentView(R.layout.details)
     }
 
     fun increaseDetail(view: View) {
@@ -126,10 +134,60 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addToCart(view: View) {
-
+        goToCart(view)
     }
 
     fun goToOrderSuccess(view: View) {
         setContentView(R.layout.order_success)
+    }
+
+    fun focusEditText(view: View) {
+
+//        findViewById<RelativeLayout>(R.id.layout_profile).dispatchTouchEvent() { _, event ->
+//            val v = currentFocus
+//            if (v != null) {
+//                v.clearFocus()
+//                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+//                imm.hideSoftInputFromWindow(v.getWindowToken(), 0)
+//            }
+//            return super.dispatchTouchEvent(event)
+//        }
+        when (view) {
+            findViewById<ImageButton>(R.id.edit_name) -> {
+                val editName = findViewById<EditText>(R.id.user_name)
+                editName.setText("")
+                editName.requestFocus()
+                showSoftKeyboard(editName)
+                editName.setOnFocusChangeListener { _, hasFocus ->
+                    if (!hasFocus) {
+                        val newName = editName.text.toString()
+                        Log.d("User Name","$newName")
+                    }
+                }
+            };
+            findViewById<ImageButton>(R.id.edit_phone) -> {
+                val editPhone = findViewById<EditText>(R.id.user_phone)
+                editPhone.setText("")
+                editPhone.requestFocus()
+                showSoftKeyboard(editPhone)
+            };
+            findViewById<ImageButton>(R.id.edit_email) -> {
+                val editEmail = findViewById<EditText>(R.id.user_email)
+                editEmail.setText("")
+                editEmail.requestFocus()
+                showSoftKeyboard(editEmail)
+            };
+            findViewById<ImageButton>(R.id.edit_address) -> {
+                val editAddress = findViewById<EditText>(R.id.user_address)
+                editAddress.setText("")
+                editAddress.requestFocus()
+                showSoftKeyboard(editAddress)
+            };
+        }
+    }
+
+    fun showSoftKeyboard(view: View) {
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
     }
 }

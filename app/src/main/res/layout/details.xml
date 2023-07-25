@@ -1,464 +1,455 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingTop="20dp">
 
     <RelativeLayout
+        android:id="@+id/detail_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:paddingTop="20dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true">
 
-        <RelativeLayout
-            android:id="@+id/detail_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_alignParentTop="true"
-            android:layout_centerInParent="true">
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/back_icon"
-                style="?android:borderlessButtonStyle"
-                android:layout_alignParentLeft="true"
-                android:onClick="goToHomePage"
-                android:contentDescription="Back to Home Icon"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Details"
-                android:textSize="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:layout_centerInParent="true"/>
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/buy"
-                style="?android:borderlessButtonStyle"
-                android:layout_alignParentRight="true"
-                android:contentDescription="Buy"/>
-
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/drink_detail_image"
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/americano"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/detail_header"
+            android:src="@drawable/back_icon"
+            style="?android:borderlessButtonStyle"
+            android:layout_alignParentStart="true"
+            android:onClick="goToHomePage"
+            android:contentDescription="Back to Home Icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
             android:layout_centerInParent="true"/>
 
-        <LinearLayout
-            android:id="@+id/drink_detail"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
-            android:layout_below="@id/drink_detail_image"
-            android:layout_centerInParent="true">
+            android:src="@drawable/buy"
+            style="?android:borderlessButtonStyle"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="Buy"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+    </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/drink_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Americano"
-                    android:textSize="16dp" />
+    <ImageView
+        android:id="@+id/drink_detail_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/americano"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/detail_header"
+        android:layout_centerInParent="true"/>
 
-                <RelativeLayout
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true">
-
-                    <ImageButton
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerInParent="true"
-                        android:layout_marginRight="0dp"
-                        android:onClick="decreaseDetail"
-                        android:src="@drawable/minus_icon"
-                        android:contentDescription="Minus"/>
-
-                    <TextView
-                        android:id="@+id/drink_current_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1"
-                        android:fontFamily="@font/poppins_medium"
-                        android:textSize="16dp"
-                        android:layout_marginRight="0dp"
-                        android:layout_centerInParent="true"/>
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/plus_icon"
-                        android:onClick="increaseDetail"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:contentDescription="Plus icon"/>
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/divider"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Shot"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_alignParentRight="true">
-
-                    <RelativeLayout
-                        android:id="@+id/option_single"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:background="@drawable/text_border_selected"
-                        android:paddingTop="5dp"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:paddingBottom="5dp"
-                        android:layout_marginRight="15dp"
-                        android:onClick="setOption"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Single"
-                            android:fontFamily="@font/poppins_medium"
-                            android:textSize="16dp"/>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/option_double"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:background="@drawable/text_border"
-                        android:paddingTop="5dp"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:paddingBottom="5dp"
-                        android:onClick="setOption"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Double"
-                            android:fontFamily="@font/poppins_medium"
-                            android:textSize="16dp"/>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/divider"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Select"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"/>
-
-                <RelativeLayout
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true">
-
-                    <ImageButton
-                        android:id="@+id/option_hot"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerInParent="true"
-                        android:contentDescription="Take away"
-                        android:onClick="setOption"
-                        android:src="@drawable/hot" />
-
-                    <ImageButton
-                        android:id="@+id/option_ice"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:contentDescription="Take away"
-                        android:onClick="setOption"
-                        android:src="@drawable/ice_selected" />
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/divider"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Size"
-                    android:textSize="16dp" />
-
-                <RelativeLayout
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true">
-
-                    <ImageButton
-                        android:id="@+id/option_size_m"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/size_m"
-                        android:onClick="setOption"
-                        android:contentDescription="Size m"/>
-
-                    <ImageButton
-                        android:id="@+id/option_size_l"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/size_l_selected"
-                        android:onClick="setOption"
-                        android:contentDescription="Size L"/>
-
-                    <ImageButton
-                        android:id="@+id/option_size_xl"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/size_xl"
-                        android:onClick="setOption"
-                        android:contentDescription="Size XL"/>
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/divider"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Ice"
-                    android:textSize="16dp" />
-
-                <RelativeLayout
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true">
-
-                    <ImageButton
-                        android:id="@+id/option_ice_little"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerInParent="true"
-                        android:contentDescription="Little ice"
-                        android:onClick="setOption"
-                        android:src="@drawable/ice_little" />
-
-                    <ImageButton
-                        android:id="@+id/option_ice_medium"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ice_medium"
-                        android:onClick="setOption"
-                        android:contentDescription="Medium ice"/>
-
-                    <ImageButton
-                        android:id="@+id/option_ice_large"
-                        style="?android:borderlessButtonStyle"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ice_large_selected"
-                        android:onClick="setOption"
-                        android:contentDescription="Large ice"/>
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/drink_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_below="@id/drink_detail_image"
+        android:layout_centerInParent="true">
 
         <RelativeLayout
-            android:id="@+id/action_add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="20dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/drink_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Americano"
+                android:textSize="16sp" />
 
             <RelativeLayout
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/layout_border_3"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:onClick="addToCart">
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true">
+
+                <ImageButton
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="Minus"
+                    android:onClick="decreaseDetail"
+                    android:src="@drawable/minus_icon" />
 
                 <TextView
+                    android:id="@+id/drink_current_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Add to cart"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
+                    android:text="1"
                     android:fontFamily="@font/poppins_medium"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:layout_centerInParent="true"/>
+
+                <ImageButton
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plus_icon"
+                    android:onClick="increaseDetail"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="Plus icon"/>
 
             </RelativeLayout>
 
         </RelativeLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider"/>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/action_add_to_cart"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="90dp">
+            android:gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Total amount"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:text="Shot"
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/total_amount"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_alignParentEnd="true">
+
+                <RelativeLayout
+                    android:id="@+id/option_single"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:background="@drawable/text_border_selected"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:onClick="setOption"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Single"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="16sp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/option_double"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:background="@drawable/text_border"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    android:onClick="setOption"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Double"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="16sp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"/>
+
+            <RelativeLayout
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true">
+
+                <ImageButton
+                    android:id="@+id/option_hot"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="Take away"
+                    android:onClick="setOption"
+                    android:src="@drawable/hot" />
+
+                <ImageButton
+                    android:id="@+id/option_ice"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="Take away"
+                    android:onClick="setOption"
+                    android:src="@drawable/ice_selected" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:text="$3.00"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:text="Size"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true">
+
+                <ImageButton
+                    android:id="@+id/option_size_m"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/size_m"
+                    android:onClick="setOption"
+                    android:contentDescription="Size m"/>
+
+                <ImageButton
+                    android:id="@+id/option_size_l"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/size_l_selected"
+                    android:onClick="setOption"
+                    android:contentDescription="Size L"/>
+
+                <ImageButton
+                    android:id="@+id/option_size_xl"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/size_xl"
+                    android:onClick="setOption"
+                    android:contentDescription="Size XL"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Ice"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true">
+
+                <ImageButton
+                    android:id="@+id/option_ice_little"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="Little ice"
+                    android:onClick="setOption"
+                    android:src="@drawable/ice_little" />
+
+                <ImageButton
+                    android:id="@+id/option_ice_medium"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ice_medium"
+                    android:onClick="setOption"
+                    android:contentDescription="Medium ice"/>
+
+                <ImageButton
+                    android:id="@+id/option_ice_large"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ice_large_selected"
+                    android:onClick="setOption"
+                    android:contentDescription="Large ice"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/action_add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_border_3"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:onClick="addToCart">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add to cart"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="16dp"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/action_add_to_cart"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="90dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Total amount"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="$3.00"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
