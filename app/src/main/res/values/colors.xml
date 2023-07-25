@@ -4,6 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="divider">#ABB3C3</color>
     <color name="faded_white">#D8D8D8</color>
-    <color name="drink_name">#001833</color>
+    <color name="faded_blue">#001833</color>
     <color name="drink_description">#757575</color>
 </resources>

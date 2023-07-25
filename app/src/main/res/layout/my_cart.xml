@@ -76,7 +76,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="Americano"
                             android:textSize="12dp"
-                            android:textColor="@color/drink_name"
+                            android:textColor="@color/faded_blue"
                             android:fontFamily="@font/poppins_medium"/>
 
                         <TextView
@@ -148,7 +148,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="Cappuccino"
                             android:textSize="12dp"
-                            android:textColor="@color/drink_name"
+                            android:textColor="@color/faded_blue"
                             android:fontFamily="@font/poppins_medium"/>
 
                         <TextView
@@ -220,7 +220,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="Flat White"
                             android:textSize="12dp"
-                            android:textColor="@color/drink_name"
+                            android:textColor="@color/faded_blue"
                             android:fontFamily="@font/poppins_medium"/>
 
                         <TextView
@@ -314,7 +314,7 @@
                 android:paddingTop="15dp"
                 android:paddingLeft="30dp"
                 android:paddingBottom="15dp"
-                android:onClick="addToCart"
+                android:onClick="goToOrderSuccess"
                 android:layout_alignParentRight="true">
 
                 <ImageView

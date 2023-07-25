@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun goToMyOrder(view: View) {
+    fun goToMyOrders(view: View) {
 
     }
 
@@ -127,5 +127,9 @@ class MainActivity : AppCompatActivity() {
 
     fun addToCart(view: View) {
 
+    }
+
+    fun goToOrderSuccess(view: View) {
+        setContentView(R.layout.order_success)
     }
 }

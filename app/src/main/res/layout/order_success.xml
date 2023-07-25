@@ -51,7 +51,7 @@
                 android:layout_width="316dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/layout_border_3"
-                android:onClick="addToCart"
+                android:onClick="goToMyOrders"
                 android:layout_marginTop="81dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp">
