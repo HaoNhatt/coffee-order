@@ -49,10 +49,10 @@ class ProfileActivity : AppCompatActivity() {
             false
         }
         val editAddress = findViewById<EditText>(R.id.user_address)
-        editName.setOnEditorActionListener { _, actionId, _ ->
+        editAddress.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 //Clear focus here from edittext
-                editName.clearFocus()
+                editAddress.clearFocus()
                 val newAddress = editName.text.toString()
                 Log.d("HaoNhatTest", newAddress)
             }
@@ -73,25 +73,25 @@ class ProfileActivity : AppCompatActivity() {
                 editName.setText("")
                 editName.requestFocus()
                 showSoftKeyboard(editName)
-            };
+            }
             findViewById<ImageButton>(R.id.edit_phone) -> {
                 val editPhone = findViewById<EditText>(R.id.user_phone)
                 editPhone.setText("")
                 editPhone.requestFocus()
                 showSoftKeyboard(editPhone)
-            };
+            }
             findViewById<ImageButton>(R.id.edit_email) -> {
                 val editEmail = findViewById<EditText>(R.id.user_email)
                 editEmail.setText("")
                 editEmail.requestFocus()
                 showSoftKeyboard(editEmail)
-            };
+            }
             findViewById<ImageButton>(R.id.edit_address) -> {
                 val editAddress = findViewById<EditText>(R.id.user_address)
                 editAddress.setText("")
                 editAddress.requestFocus()
                 showSoftKeyboard(editAddress)
-            };
+            }
         }
     }
 

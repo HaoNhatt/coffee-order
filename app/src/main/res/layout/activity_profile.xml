@@ -73,19 +73,22 @@
                         android:text="Full name"
                         android:textColor="@color/faded_white"
                         android:textSize="12sp"
-                        android:fontFamily="@font/poppins_medium"/>
+                        android:fontFamily="@font/poppins_medium"
+                        android:labelFor="@id/user_name"/>
 
                     <EditText
                         android:id="@+id/user_name"
                         android:layout_width="wrap_content"
                         android:maxWidth="220sp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48sp"
+                        android:layout_marginTop="-12sp"
                         android:text="@string/user_full_name"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppins_medium"
                         android:background="@null"
                         android:imeOptions="actionDone"
-                        android:inputType="text"/>
+                        android:inputType="text"
+                        android:autofillHints="name"/>
 
                 </LinearLayout>
 
@@ -134,19 +137,22 @@
                         android:text="Phone"
                         android:textColor="@color/faded_white"
                         android:textSize="12sp"
-                        android:fontFamily="@font/poppins_medium"/>
+                        android:fontFamily="@font/poppins_medium"
+                        android:labelFor="@id/user_phone"/>
 
                     <EditText
                         android:id="@+id/user_phone"
                         android:layout_width="wrap_content"
                         android:maxWidth="220sp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48sp"
+                        android:layout_marginTop="-12sp"
                         android:text="@string/phone_number"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppins_medium"
                         android:background="@null"
                         android:lines="1"
-                        android:inputType="number"/>
+                        android:inputType="phone|number"
+                        android:autofillHints="phone"/>
 
                 </LinearLayout>
 
@@ -195,19 +201,22 @@
                         android:text="Email"
                         android:textColor="@color/faded_white"
                         android:textSize="12sp"
-                        android:fontFamily="@font/poppins_medium"/>
+                        android:fontFamily="@font/poppins_medium"
+                        android:labelFor="@id/user_email"/>
 
                     <EditText
                         android:id="@+id/user_email"
                         android:layout_width="wrap_content"
                         android:maxWidth="220sp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48sp"
+                        android:layout_marginTop="-12sp"
                         android:text="@string/email"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppins_medium"
                         android:background="@null"
                         android:lines="1"
-                        android:inputType="textEmailAddress"/>
+                        android:inputType="textEmailAddress"
+                        android:autofillHints="emailAddress"/>
 
                 </LinearLayout>
 
@@ -256,19 +265,22 @@
                         android:text="Address"
                         android:textColor="@color/faded_white"
                         android:textSize="12sp"
-                        android:fontFamily="@font/poppins_medium"/>
+                        android:fontFamily="@font/poppins_medium"
+                        android:labelFor="@id/user_address"/>
 
                     <EditText
                         android:id="@+id/user_address"
                         android:layout_width="wrap_content"
                         android:maxWidth="220sp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48sp"
+                        android:layout_marginTop="-12sp"
                         android:text="@string/address"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppins_medium"
                         android:background="@null"
                         android:lines="1"
-                        android:inputType="text"/>
+                        android:inputType="text"
+                        android:autofillHints="postalAddress"/>
 
                 </LinearLayout>
 
