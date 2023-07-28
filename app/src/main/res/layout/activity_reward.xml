@@ -1,9 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RewardActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/reward_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rewards"
+        android:layout_marginTop="50sp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:textColor="@color/strong_blue"
+        android:fontFamily="@font/poppins_medium"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/loyalCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_below="@id/reward_header"
+        android:layout_marginTop="25sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginRight="25sp"
+        android:background="@drawable/layout_border_1"
+        android:paddingBottom="15dp">
+
+        <LinearLayout
+            android:id="@+id/loyalCard_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/loyalCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="19"
+                android:text="Loyalty card"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/loyal_cup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0 / 8"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:background="@drawable/loyal_card_border"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="11dp"
+            android:paddingRight="11dp">
+
+            <ImageView
+                android:id="@+id/loyal_cup_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cup_off"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/loyal_cup_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cup_off"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/loyal_cup_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cup_off"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/loyal_cup_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cup_off"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/loyal_cup_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cup_off"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/loyal_cup_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cup_off"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/loyal_cup_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cup_off"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/loyal_cup_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cup_off"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/redeem_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_below="@id/loyalCard"
+        android:layout_marginTop="16sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginRight="25sp"
+        android:background="@drawable/layout_border_1"
+        android:paddingBottom="15dp">
+
+        <RelativeLayout
+            android:id="@+id/redeem_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="25dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="My Points"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/myPoints"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/redeem_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:backgroundTint="@color/redeem_button"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Redeem drinks"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:onClick="actionGoToRedeem"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/redeem_menu"
+        android:layout_marginTop="31sp"
+        android:layout_marginStart="31sp"
+        android:layout_marginEnd="31sp">
+
+        <TextView
+            android:id="@+id/string_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History Rewards"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/strong_blue"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/string_history"
+            android:layout_marginTop="20sp">
+
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/navigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-89dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/navigator_border"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_icon"
+            android:layout_weight="1"
+            android:onClick="goToHomePage"
+            style="?android:borderlessButtonStyle"
+            android:contentDescription="HomeIcon"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/reward_selected_icon"
+            android:layout_weight="1"
+            android:onClick="goToReward"
+            style="?android:borderlessButtonStyle"
+            android:contentDescription="Rewards Icon"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_order_icon"
+            android:layout_weight="1"
+            android:onClick="goToMyOrders"
+            style="?android:borderlessButtonStyle"
+            android:contentDescription="My Order Icon"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

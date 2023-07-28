@@ -6,4 +6,6 @@
     <string name="phone_number">+9312345678</string>
     <string name="email">htnhao21@apcs.fitus.edu.vn</string>
     <string name="address">123 Nguyen Dinh Chieu, Phuong 14, Quan Tan Binh, Thanh Pho Ho Chi Minh</string>
+    <string name="myPoints">2750</string>
+    <integer name="myPoints">2750</integer>
 </resources>
