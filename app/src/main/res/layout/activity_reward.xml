@@ -178,6 +178,7 @@
                     android:textColor="@color/white"/>
 
                 <TextView
+                    android:id="@+id/user_points"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -242,7 +243,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="-89dp"
+        android:layout_marginBottom="15sp"
         android:layout_marginLeft="26dp"
         android:layout_marginRight="26dp"
         android:background="@drawable/navigator_border"
@@ -260,12 +261,11 @@
             style="?android:borderlessButtonStyle"
             android:contentDescription="HomeIcon"/>
 
-        <ImageButton
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/reward_selected_icon"
             android:layout_weight="1"
-            android:onClick="goToReward"
             style="?android:borderlessButtonStyle"
             android:contentDescription="Rewards Icon"/>
 

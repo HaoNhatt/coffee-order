@@ -20,6 +20,12 @@ class HomeActivity : AppCompatActivity() {
         setLoyalCup()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        setLoyalCup()
+    }
+
     private fun setLoyalCup() {
         val loyalCup = this.resources.getInteger(R.integer.loyal_cup)
         when (loyalCup) {
@@ -101,6 +107,7 @@ class HomeActivity : AppCompatActivity() {
 
     fun details(view: View) {
         val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("id", view.tag.toString())
         startActivity(intent)
     }
 

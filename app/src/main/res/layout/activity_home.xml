@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Good morning"
+                android:text="@string/good_morning"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/faded_white"/>
@@ -59,7 +59,7 @@
                 android:layout_marginEnd="-30dp"
                 android:onClick="goToCart"
                 style="?android:borderlessButtonStyle"
-                android:contentDescription="Go to Cart"/>
+                android:contentDescription="@string/go_to_cart"/>
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
                 android:src="@drawable/profile"
                 android:onClick="goToProfile"
                 style="?android:borderlessButtonStyle"
-                android:contentDescription="Go to Profile"/>
+                android:contentDescription="@string/go_to_profile"/>
 
         </LinearLayout>
 
@@ -103,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="19"
-                android:text="Loyalty card"
+                android:text="@string/loyalty_card"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"/>
@@ -113,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0 / 8"
+                android:text="@string/_0_8"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"/>
@@ -142,56 +142,64 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_1"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_2"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_3"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_4"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_5"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_6"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_7"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_8"/>
 
         </LinearLayout>
 
@@ -211,7 +219,7 @@
             android:id="@+id/main_menu_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose your coffee"
+            android:text="@string/choose_your_coffee"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_alignParentTop="true"
@@ -239,6 +247,7 @@
 
                 <RelativeLayout
                     android:id="@+id/americano"
+                    android:tag="Americano"
                     android:layout_width="154dp"
                     android:layout_height="164dp"
                     android:orientation="vertical"
@@ -257,12 +266,13 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/americano"
                         android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"/>
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@string/drink_1_image"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Americano"
+                        android:text="@string/americano"
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="16sp"
@@ -273,6 +283,7 @@
 
                 <RelativeLayout
                     android:id="@+id/cappuccino"
+                    android:tag="Cappuccino"
                     android:layout_width="154dp"
                     android:layout_height="164dp"
                     android:orientation="vertical"
@@ -291,12 +302,13 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/cappuccino"
                         android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"/>
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@string/drink_2_image"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cappuccino"
+                        android:text="@string/cappuccino"
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="16sp"
@@ -307,6 +319,7 @@
 
                 <RelativeLayout
                     android:id="@+id/mocha"
+                    android:tag="Mocha"
                     android:layout_width="154dp"
                     android:layout_height="164dp"
                     android:orientation="vertical"
@@ -325,12 +338,13 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/mocha"
                         android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"/>
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@string/drink_3_image"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mocha"
+                        android:text="@string/mocha"
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="14sp"
@@ -341,6 +355,7 @@
 
                 <RelativeLayout
                     android:id="@+id/flat_white"
+                    android:tag="Flat_White"
                     android:layout_width="154dp"
                     android:layout_height="164dp"
                     android:orientation="vertical"
@@ -359,12 +374,13 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/flat_white"
                         android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"/>
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@string/drink_4_image"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Flat White"
+                        android:text="@string/flat_white"
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="14sp"
@@ -377,51 +393,50 @@
 
         </ScrollView>
 
-        <LinearLayout
-            android:id="@+id/navigator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="-89dp"
-            android:layout_marginLeft="26dp"
-            android:layout_marginRight="26dp"
-            android:background="@drawable/navigator_border"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="11dp"
-            android:paddingRight="11dp">
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/home_selected_icon"
-                android:layout_weight="1"
-                android:onClick="goToHomePage"
-                style="?android:borderlessButtonStyle"
-                android:contentDescription="HomeIcon"/>
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/reward_icon"
-                android:layout_weight="1"
-                android:onClick="goToReward"
-                style="?android:borderlessButtonStyle"
-                android:contentDescription="Rewards Icon"/>
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/my_order_icon"
-                android:layout_weight="1"
-                android:onClick="goToMyOrders"
-                style="?android:borderlessButtonStyle"
-                android:contentDescription="My Order Icon"/>
-
-        </LinearLayout>
-
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/navigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15sp"
+        android:layout_marginLeft="26sp"
+        android:layout_marginRight="26sp"
+        android:background="@drawable/navigator_border"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_selected_icon"
+            android:layout_weight="1"
+            style="?android:borderlessButtonStyle"
+            android:contentDescription="@string/des_home_button"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/reward_icon"
+            android:layout_weight="1"
+            android:onClick="goToReward"
+            style="?android:borderlessButtonStyle"
+            android:contentDescription="@string/des_rewards_button"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_order_icon"
+            android:layout_weight="1"
+            android:onClick="goToMyOrders"
+            style="?android:borderlessButtonStyle"
+            android:contentDescription="@string/des_my_order_button"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

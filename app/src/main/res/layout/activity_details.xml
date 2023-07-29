@@ -7,7 +7,7 @@
     tools:context=".DetailsActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:paddingTop="20dp">
+    android:paddingTop="20sp">
 
     <RelativeLayout
         android:id="@+id/detail_header"
@@ -25,14 +25,14 @@
             style="?android:borderlessButtonStyle"
             android:layout_alignParentStart="true"
             android:onClick="actionBack"
-            android:contentDescription="Back to Home Icon"/>
+            android:contentDescription="@string/back_to_home_icon"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/poppins_medium"
-            android:text="Details"
+            android:text="@string/details"
             android:textSize="16sp" />
 
         <ImageButton
@@ -41,7 +41,8 @@
             android:src="@drawable/buy"
             style="?android:borderlessButtonStyle"
             android:layout_alignParentEnd="true"
-            android:contentDescription="Buy"/>
+            android:onClick="actionGoToMyCart"
+            android:contentDescription="@string/buy"/>
 
     </RelativeLayout>
 
@@ -52,10 +53,10 @@
         android:layout_below="@id/detail_header"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
+        android:contentDescription="@string/des_drink_image"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        android:src="@drawable/americano"
-        android:contentDescription="Drink image"/>
+        android:src="@drawable/americano" />
 
     <LinearLayout
         android:id="@+id/drink_detail"
@@ -81,7 +82,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Americano"
+                android:text="@string/americano"
                 android:textSize="16sp" />
 
             <RelativeLayout
@@ -96,12 +97,13 @@
 
                 <ImageButton
                     android:id="@+id/minus_icon"
+                    android:tag="decrease"
                     style="?android:borderlessButtonStyle"
                     android:layout_width="48dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerInParent="true"
-                    android:contentDescription="Minus"
+                    android:contentDescription="@string/minus"
                     android:onClick="setAmount"
                     android:src="@drawable/minus_icon" />
 
@@ -109,21 +111,22 @@
                     android:id="@+id/drink_current_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:layout_centerInParent="true"
                     android:fontFamily="@font/poppins_medium"
-                    android:textSize="16sp"
-                    android:layout_centerInParent="true"/>
+                    android:text="@string/_1"
+                    android:textSize="16sp" />
 
                 <ImageButton
                     android:id="@+id/plus_icon"
+                    android:tag="increase"
+                    style="?android:borderlessButtonStyle"
                     android:layout_width="48dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/plus_icon"
-                    android:onClick="setAmount"
-                    style="?android:borderlessButtonStyle"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
-                    android:contentDescription="Plus icon"/>
+                    android:contentDescription="@string/plus_icon"
+                    android:onClick="setAmount"
+                    android:src="@drawable/plus_icon" />
 
             </RelativeLayout>
 
@@ -148,7 +151,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Shot"
+                android:text="@string/shot"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -156,12 +159,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
                 android:layout_alignParentEnd="true">
 
                 <RelativeLayout
                     android:id="@+id/option_single"
+                    android:tag="single"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:background="@drawable/text_border_selected"
@@ -176,7 +178,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Single"
+                        android:text="@string/single"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="16sp"/>
 
@@ -184,6 +186,7 @@
 
                 <RelativeLayout
                     android:id="@+id/option_double"
+                    android:tag="double"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:background="@drawable/text_border"
@@ -197,7 +200,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Double"
+                        android:text="@string/double"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="16sp"/>
 
@@ -223,7 +226,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select"
+                android:text="@string/select"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_medium"
                 android:layout_alignParentStart="true"
@@ -242,9 +245,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerInParent="true"
-                    android:contentDescription="Hot select icon"
+                    android:contentDescription="@string/hot_select_icon"
                     android:onClick="setSelect"
-                    android:src="@drawable/hot" />
+                    android:src="@drawable/hot"
+                    android:tag="hot" />
 
                 <ImageButton
                     android:id="@+id/option_ice"
@@ -253,9 +257,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
-                    android:contentDescription="Ice select icon"
+                    android:contentDescription="@string/ice_select_icon"
                     android:onClick="setSelect"
-                    android:src="@drawable/ice_selected" />
+                    android:src="@drawable/ice_selected"
+                    android:tag="ice" />
 
             </RelativeLayout>
 
@@ -280,7 +285,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Size"
+                android:text="@string/size"
                 android:textSize="16sp" />
 
             <RelativeLayout
@@ -296,9 +301,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerInParent="true"
-                    android:contentDescription="Size m"
+                    android:contentDescription="@string/size_m"
                     android:onClick="setSize"
-                    android:src="@drawable/size_m" />
+                    android:src="@drawable/size_m"
+                    android:tag="size_m" />
 
                 <ImageButton
                     android:id="@+id/option_size_l"
@@ -306,9 +312,10 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:contentDescription="Size L"
+                    android:contentDescription="@string/size_l"
                     android:onClick="setSize"
-                    android:src="@drawable/size_l_selected" />
+                    android:src="@drawable/size_l_selected"
+                    android:tag="size_l" />
 
                 <ImageButton
                     android:id="@+id/option_size_xl"
@@ -317,9 +324,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
-                    android:contentDescription="Size XL"
+                    android:contentDescription="@string/size_xl"
                     android:onClick="setSize"
-                    android:src="@drawable/size_xl" />
+                    android:src="@drawable/size_xl"
+                    android:tag="size_xl" />
 
             </RelativeLayout>
 
@@ -344,7 +352,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Ice"
+                android:text="@string/ice"
                 android:textSize="16sp" />
 
             <RelativeLayout
@@ -360,30 +368,33 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerInParent="true"
-                    android:contentDescription="Little ice"
+                    android:contentDescription="@string/little_ice"
                     android:onClick="setIce"
-                    android:src="@drawable/ice_little" />
+                    android:src="@drawable/ice_little"
+                    android:tag="little_ice" />
 
                 <ImageButton
                     android:id="@+id/option_ice_medium"
+                    android:tag="medium_ice"
                     style="?android:borderlessButtonStyle"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ice_medium"
+                    android:contentDescription="@string/medium_ice"
                     android:onClick="setIce"
-                    android:contentDescription="Medium ice"/>
+                    android:src="@drawable/ice_medium" />
 
                 <ImageButton
                     android:id="@+id/option_ice_large"
+                    android:tag="large_ice"
                     style="?android:borderlessButtonStyle"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ice_large_selected"
+                    android:contentDescription="@string/large_ice"
                     android:onClick="setIce"
-                    android:contentDescription="Large ice"/>
+                    android:src="@drawable/ice_large_selected" />
 
             </RelativeLayout>
 
@@ -395,25 +406,25 @@
         android:id="@+id/action_add_to_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
         android:background="@drawable/layout_border_3"
+        android:onClick="actionAddToCart"
         android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:onClick="actionAddToCart">
+        android:paddingBottom="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add to cart"
-            android:textStyle="bold"
-            android:textColor="@color/white"
+            android:layout_centerInParent="true"
             android:fontFamily="@font/poppins_medium"
+            android:text="@string/add_to_cart"
+            android:textColor="@color/white"
             android:textSize="16sp"
-            android:layout_centerInParent="true"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -433,7 +444,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:fontFamily="@font/poppins_medium"
-            android:text="Total amount"
+            android:text="@string/total_amount_text"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -445,7 +456,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:fontFamily="@font/poppins_medium"
-            android:text="$3.00"
+            android:text="@string/total_amount"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />

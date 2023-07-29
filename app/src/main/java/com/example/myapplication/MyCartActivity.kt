@@ -15,4 +15,8 @@ class MyCartActivity : AppCompatActivity() {
         val intent = Intent(this, OrderSuccessActivity::class.java)
         startActivity(intent)
     }
+
+    fun goBack(view: View) {
+        finish()
+    }
 }
