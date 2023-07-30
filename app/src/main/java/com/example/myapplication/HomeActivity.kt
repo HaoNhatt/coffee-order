@@ -11,26 +11,19 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.io.PrintStream
+import java.util.Scanner
 
 class HomeActivity : AppCompatActivity() {
-//    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-//        if (it.resultCode == RESULT_OK) {
-//            val screen = it.data?.getStringExtra("screen") ?: ""
-//            when (screen) {
-//                "rewards" -> {
-//                    val intent = Intent(this, RewardActivity::class.java)
-//                    startForResult!!.launch(intent)
-//                }
-//                "myOrder" -> {
-//
-//                }
-//            }
-//        }
-//    }
+    private val LOYALCUP = "loyal_cup.txt"
+    private val REDEEMFILE = "user_redeem.txt"
+    private val USERINFOFILE = "user_info.txt"
+    private var loyalCup = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +31,7 @@ class HomeActivity : AppCompatActivity() {
 
         settingNavigator()
         setLoyalCup()
+        setUserName()
     }
 
     private fun settingNavigator() {
@@ -63,7 +57,6 @@ class HomeActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-
                 else -> {
                     true
                 }
@@ -75,10 +68,12 @@ class HomeActivity : AppCompatActivity() {
         super.onResume()
 
         setLoyalCup()
+        setUserName()
     }
 
     private fun setLoyalCup() {
-        val loyalCup = this.resources.getInteger(R.integer.loyal_cup)
+        val reader = Scanner(openFileInput(LOYALCUP))
+        loyalCup = reader.nextLine().toInt()
         when (loyalCup) {
             8 -> {
                 findViewById<ImageView>(R.id.loyal_cup_8).setImageResource(R.drawable.cup_on)
@@ -132,11 +127,20 @@ class HomeActivity : AppCompatActivity() {
             1 -> {
                 findViewById<ImageView>(R.id.loyal_cup_1).setImageResource(R.drawable.cup_on)
             }
+            0 -> {
+
+            }
         }
         findViewById<TextView>(R.id.loyal_cup).text = buildString {
-        append(loyalCup)
-        append(" / 8")
+            append(loyalCup)
+            append(" / 8")
+        }
     }
+
+    private fun setUserName() {
+        val reader = Scanner(openFileInput(USERINFOFILE))
+        val line = reader.nextLine().split("\t")
+        findViewById<TextView>(R.id.greeting_user).text = line[0]
     }
 
     fun goToCart(view: View) {
@@ -159,5 +163,34 @@ class HomeActivity : AppCompatActivity() {
     fun goToOrderSuccess(view: View) {
         val intent = Intent(this, OrderSuccessActivity::class.java)
         startActivity(intent)
+    }
+
+    fun actionCheckCup(view: View) {
+        if (loyalCup == 8) {
+            val reader = Scanner(openFileInput(REDEEMFILE))
+            var points = reader.nextLine().toInt()
+            points += 670
+            val outStream = PrintStream(openFileOutput(REDEEMFILE, MODE_PRIVATE))
+            outStream.println(points)
+            outStream.close()
+
+            loyalCup = 0
+            saveLoyalCup()
+            setLoyalCup()
+        } else {
+            Toast.makeText(this, "You don't have enough loyal cup", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun saveLoyalCup() {
+        val outStream = PrintStream(openFileOutput(LOYALCUP, MODE_PRIVATE))
+        outStream.println(loyalCup)
+        outStream.close()
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        saveLoyalCup()
     }
 }

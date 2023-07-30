@@ -19,16 +19,16 @@
             style="?android:borderlessButtonStyle"
             android:layout_alignParentTop="true"
             android:layout_centerVertical="true"
-            android:onClick="goToHomePage"
+            android:onClick="actionBack"
             android:layout_marginTop="0dp"
-            android:contentDescription="Back to Home Icon"/>
+            android:contentDescription="@string/back_to_home_icon"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
-            android:text="Redeem"
+            android:text="@string/redeem"
             android:textSize="16sp"
             android:textColor="@color/faded_blue"
             android:layout_marginTop="0dp"
@@ -36,16 +36,295 @@
 
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/reward_header"-->
+<!--        android:layout_marginTop="20sp"-->
+<!--        android:layout_marginStart="22sp"-->
+<!--        android:layout_marginEnd="22sp">-->
+
+
+
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/reward_header"
-        android:layout_marginTop="20sp"
-        android:layout_marginStart="22sp"
-        android:layout_marginEnd="22sp">
+        android:contentDescription="@string/redeem_list">
 
+        <LinearLayout
+            android:id="@+id/linear_layout_redeem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30sp"
+            android:layout_marginStart="33sp"
+            android:layout_marginEnd="40sp">
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
 
-    </androidx.recyclerview.widget.RecyclerView>
+                <ImageView
+                    android:id="@+id/drink_1_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20sp"
+                    android:scaleX="0.75"
+                    android:scaleY="0.75"
+                    android:src="@drawable/americano"
+                    android:contentDescription="@string/drink_1_image"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="120sp"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/drink_1_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/americano"
+                        android:textSize="14sp"
+                        android:textColor="@color/faded_blue"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                    <TextView
+                        android:id="@+id/drink_1_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/valid_until_04_07_23"
+                        android:textSize="12sp"
+                        android:textColor="@color/drink_description"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/drink_1_redeem_point"
+                    android:tag="@string/americano"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/_1340pts"
+                    android:paddingTop="10sp"
+                    android:paddingStart="15sp"
+                    android:paddingEnd="15sp"
+                    android:paddingBottom="10sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/redeem_button"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:onClick="actionRedeemDrink"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/drink_2_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20sp"
+                    android:scaleX="0.75"
+                    android:scaleY="0.75"
+                    android:src="@drawable/cappuccino"
+                    android:contentDescription="@string/drink_1_image"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="120sp"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/drink_2_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cappuccino"
+                        android:textSize="14sp"
+                        android:textColor="@color/faded_blue"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                    <TextView
+                        android:id="@+id/drink_2_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/valid_until_04_07_23"
+                        android:textSize="12sp"
+                        android:textColor="@color/drink_description"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/drink_2_redeem_point"
+                    android:tag="@string/cappuccino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/_1340pts"
+                    android:paddingTop="10sp"
+                    android:paddingStart="15sp"
+                    android:paddingEnd="15sp"
+                    android:paddingBottom="10sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/redeem_button"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:onClick="actionRedeemDrink"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/drink_3_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20sp"
+                    android:scaleX="0.75"
+                    android:scaleY="0.75"
+                    android:src="@drawable/mocha"
+                    android:contentDescription="@string/drink_1_image"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="120sp"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/drink_3_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mocha"
+                        android:textSize="14sp"
+                        android:textColor="@color/faded_blue"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                    <TextView
+                        android:id="@+id/drink_3_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/valid_until_04_07_23"
+                        android:textSize="12sp"
+                        android:textColor="@color/drink_description"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/drink_3_redeem_point"
+                    android:tag="@string/mocha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/_1340pts"
+                    android:paddingTop="10sp"
+                    android:paddingStart="15sp"
+                    android:paddingEnd="15sp"
+                    android:paddingBottom="10sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/redeem_button"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:onClick="actionRedeemDrink"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/drink_4_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20sp"
+                    android:scaleX="0.75"
+                    android:scaleY="0.75"
+                    android:src="@drawable/flat_white"
+                    android:contentDescription="@string/drink_1_image"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="120sp"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/drink_4_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/flat_white"
+                        android:textSize="14sp"
+                        android:textColor="@color/faded_blue"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                    <TextView
+                        android:id="@+id/drink_4_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/valid_until_04_07_23"
+                        android:textSize="12sp"
+                        android:textColor="@color/drink_description"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/drink_4_redeem_point"
+                    android:tag="@string/flat_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/_1340pts"
+                    android:paddingTop="10sp"
+                    android:paddingStart="15sp"
+                    android:paddingEnd="15sp"
+                    android:paddingBottom="10sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/redeem_button"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:onClick="actionRedeemDrink"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

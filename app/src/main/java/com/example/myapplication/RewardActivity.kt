@@ -5,26 +5,57 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.io.PrintStream
+import java.util.Scanner
 
 class RewardActivity : AppCompatActivity() {
+    private val REDEEMFILE = "user_redeem.txt"
+    private val HISTORYFILE = "history.txt"
+    private val LOYALCUP = "loyal_cup.txt"
+    private var loyalCup = 0
+    private var history = ArrayList<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reward)
 
         settingNavigator()
         setLoyalCup()
+        setHistory()
+        makeHistory()
     }
 
     override fun onResume() {
         super.onResume()
 
         setLoyalCup()
+        setPoints()
+    }
+
+    private fun setPoints() {
+        val reader = Scanner(openFileInput(REDEEMFILE))
+        var redeemPoint = 0
+        while (reader.hasNextLine()) {
+            val line = reader.nextLine()
+            redeemPoint = line.toInt()
+            if (redeemPoint > 13400) {
+                redeemPoint = 13400
+                val outStream = PrintStream(openFileOutput(REDEEMFILE, MODE_PRIVATE))
+                outStream.println(redeemPoint)
+                outStream.close()
+            }
+        }
+        findViewById<TextView>(R.id.user_points).text = redeemPoint.toString()
     }
 
     private fun setLoyalCup() {
-        val loyalCup = this.resources.getInteger(R.integer.loyal_cup)
+        val reader = Scanner(openFileInput(LOYALCUP))
+        loyalCup = reader.nextLine().toInt()
         when (loyalCup) {
             8 -> {
                 findViewById<ImageView>(R.id.loyal_cup_8).setImageResource(R.drawable.cup_on)
@@ -78,10 +109,32 @@ class RewardActivity : AppCompatActivity() {
             1 -> {
                 findViewById<ImageView>(R.id.loyal_cup_1).setImageResource(R.drawable.cup_on)
             }
+            0 -> {
+
+            }
         }
         findViewById<TextView>(R.id.loyal_cup).text = buildString {
             append(loyalCup)
             append(" / 8")
+        }
+    }
+
+    private fun setHistory() {
+        val reader = Scanner(openFileInput(HISTORYFILE))
+        while (reader.hasNextLine()) {
+            val line = reader.nextLine()
+            history.add(line)
+        }
+    }
+
+    private fun makeHistory() {
+        val layoutHistory = findViewById<LinearLayout>(R.id.linear_layout_history_reward)
+
+        for (i in 0 until history.size) {
+            val item = layoutInflater.inflate(R.layout.reward_history, null)
+            val line = history[i].split("\t")
+            item.findViewById<TextView>(R.id.item_history_reward_name).text = line[0]
+            layoutHistory.addView(item)
         }
     }
 
@@ -121,11 +174,33 @@ class RewardActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun goToHomePage(view: View) {
-        finish()
+    private fun saveLoyalCup() {
+        val outStream = PrintStream(openFileOutput(LOYALCUP, MODE_PRIVATE))
+        outStream.println(loyalCup)
+        outStream.close()
     }
 
-    fun goToMyOrders(view: View) {
-        finish()
+    fun actionCheckCup(view: View) {
+        if (loyalCup == 8) {
+            val reader = Scanner(openFileInput(REDEEMFILE))
+            var points = reader.nextLine()
+            points += 670
+            val outStream = PrintStream(openFileOutput(REDEEMFILE, MODE_PRIVATE))
+            outStream.println(points)
+            outStream.close()
+
+            loyalCup = 0
+            saveLoyalCup()
+            setLoyalCup()
+            setPoints()
+        } else {
+            Toast.makeText(this, "You don't have enough loyal cup", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        saveLoyalCup()
     }
 }

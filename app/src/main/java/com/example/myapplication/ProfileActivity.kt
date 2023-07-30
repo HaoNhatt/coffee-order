@@ -8,14 +8,47 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageButton
+import java.io.PrintStream
+import java.util.Scanner
 
 class ProfileActivity : AppCompatActivity() {
+    private val USERINFOFILE = "user_info.txt"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
         setEdit()
+        loadUserInfo()
     }
+
+    private fun loadUserInfo() {
+        val reader = Scanner(openFileInput(USERINFOFILE))
+        while (reader.hasNextLine()) {
+            val line = reader.nextLine()
+            val userData = line.split("\t")
+            findViewById<EditText>(R.id.user_name).setText(userData[0])
+            findViewById<EditText>(R.id.user_phone).setText(userData[1])
+            findViewById<EditText>(R.id.user_email).setText(userData[2])
+            findViewById<EditText>(R.id.user_address).setText(userData[3])
+        }
+    }
+
+    private fun saveUserInfo() {
+        val line = "${findViewById<EditText>(R.id.user_name).text}\t" +
+                "${findViewById<EditText>(R.id.user_phone).text}\t" +
+                "${findViewById<EditText>(R.id.user_email).text}\t" +
+                "${findViewById<EditText>(R.id.user_address).text}"
+        val outStream = PrintStream(openFileOutput(USERINFOFILE, MODE_PRIVATE))
+        outStream.println(line)
+        outStream.close()
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        saveUserInfo()
+    }
+
 
     private fun setEdit() {
         val editName = findViewById<EditText>(R.id.user_name)
@@ -23,8 +56,6 @@ class ProfileActivity : AppCompatActivity() {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 //Clear focus here from edittext
                 editName.clearFocus()
-                val newName = editName.text.toString()
-                Log.d("HaoNhatTest", newName)
             }
             false
         }
@@ -33,8 +64,6 @@ class ProfileActivity : AppCompatActivity() {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 //Clear focus here from edittext
                 editPhone.clearFocus()
-                val newPhone = editPhone.text.toString()
-                Log.d("HaoNhatTest", newPhone)
             }
             false
         }
@@ -43,8 +72,6 @@ class ProfileActivity : AppCompatActivity() {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 //Clear focus here from edittext
                 editEmail.clearFocus()
-                val newEmail = editName.text.toString()
-                Log.d("HaoNhatTest", newEmail)
             }
             false
         }
@@ -53,18 +80,11 @@ class ProfileActivity : AppCompatActivity() {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 //Clear focus here from edittext
                 editAddress.clearFocus()
-                val newAddress = editName.text.toString()
-                Log.d("HaoNhatTest", newAddress)
             }
             false
         }
     }
 
-//    fun releaseFocus(view: View) {
-//        Log.d("HaoNhatTest", "$currentFocus")
-//        currentFocus?.clearFocus()
-//        Log.d("HaoNhatTest", "$currentFocus")
-//    }
 
     fun focusEditText(view: View) {
         when (view) {
@@ -98,5 +118,10 @@ class ProfileActivity : AppCompatActivity() {
     private fun showSoftKeyboard(view: View) {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
+    }
+
+    fun actionBack(view: View) {
+        saveUserInfo()
+        finish()
     }
 }

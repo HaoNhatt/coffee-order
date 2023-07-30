@@ -10,7 +10,7 @@
         android:id="@+id/reward_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rewards"
+        android:text="@string/rewards"
         android:layout_marginTop="50sp"
         android:layout_centerHorizontal="true"
         android:textSize="16sp"
@@ -29,6 +29,7 @@
         android:layout_marginLeft="25sp"
         android:layout_marginRight="25sp"
         android:background="@drawable/layout_border_1"
+        android:onClick="actionCheckCup"
         android:paddingBottom="15dp">
 
         <LinearLayout
@@ -48,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="19"
-                android:text="Loyalty card"
+                android:text="@string/loyalty_card"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"/>
@@ -58,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0 / 8"
+                android:text="@string/_0_8"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"/>
@@ -84,127 +85,121 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_1"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_2"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_3"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_4"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_5"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_6"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_7"/>
 
             <ImageView
                 android:id="@+id/loyal_cup_8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cup_off"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/des_image_cup_8"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/redeem_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
+        android:layout_height="90sp"
         android:layout_below="@id/loyalCard"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:layout_marginTop="16sp"
         android:layout_marginLeft="25sp"
         android:layout_marginRight="25sp"
+        android:paddingBottom="15dp"
         android:background="@drawable/layout_border_1"
-        android:paddingBottom="15dp">
+        android:paddingTop="15dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="25dp">
 
-        <RelativeLayout
-            android:id="@+id/redeem_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="25dp">
-
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignParentStart="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="My Points"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/white"/>
-
-                <TextView
-                    android:id="@+id/user_points"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/myPoints"
-                    android:textSize="24sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/white"/>
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/redeem_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                android:backgroundTint="@color/redeem_button"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/my_points"
+                android:textSize="14sp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Redeem drinks"
-                android:textColor="@color/white"
-                android:textSize="10sp"
-                android:onClick="actionGoToRedeem"/>
+                android:textColor="@color/white"/>
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/user_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:text="@string/myPoints"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"/>
 
-    </LinearLayout>
+
+        <Button
+            android:id="@+id/redeem_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/redeem_button"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/redeem_drinks"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:onClick="actionGoToRedeem"/>
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -218,21 +213,60 @@
             android:id="@+id/string_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="History Rewards"
+            android:text="@string/history_rewards"
             android:textSize="14sp"
             android:fontFamily="@font/poppins_medium"
             android:textColor="@color/strong_blue"/>
 
-        <androidx.recyclerview.widget.RecyclerView
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/string_history"-->
+<!--            android:layout_marginTop="20sp">-->
+
+
+
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/string_history"
-            android:layout_marginTop="20sp">
+            android:contentDescription="@string/scroll_view_for_history">
 
+            <LinearLayout
+                android:id="@+id/linear_layout_history_reward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        </androidx.recyclerview.widget.RecyclerView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/americano"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_medium"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/_12pts"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </RelativeLayout>
 

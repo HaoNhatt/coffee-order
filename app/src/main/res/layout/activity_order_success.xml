@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OrderSuccessActivity">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="vertical">
+    android:layout_height="wrap_content"
+    tools:context=".OrderSuccessActivity"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:src="@drawable/order_success_icon" />
+            android:src="@drawable/order_success_icon"
+            android:contentDescription="@string/order_successfully"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Order success"
-            android:textSize="22dp"
+            android:text="@string/order_success"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -33,18 +30,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Your order has been placed successfully"
+            android:text="@string/your_order_has_been_placed_successfully"
             android:textColor="@color/faded_white"
-            android:textSize="14dp" />
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="For more details, go to my orders"
+            android:text="@string/for_more_details_go_to_my_orders"
             android:textColor="@color/faded_white"
-            android:textSize="14dp" />
+            android:textSize="16sp" />
 
         <RelativeLayout
             android:layout_width="316dp"
@@ -60,13 +57,11 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Track my order"
+                android:text="@string/track_my_order"
                 android:textColor="@color/white"
-                android:textSize="16dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
 
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

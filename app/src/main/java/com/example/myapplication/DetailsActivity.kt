@@ -60,6 +60,7 @@ class DetailsActivity : AppCompatActivity() {
         basePrice_m = 2.50
         basePrice_l = 3.00
         basePrice_xl = 3.50
+        total_price = amount * basePrice_l
     }
 
     fun actionBack(view: View) {
@@ -195,14 +196,15 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     fun actionAddToCart(view: View) {
+        val drinkName = intent.getStringExtra("id")
         val intent = Intent(this, MyCartActivity::class.java)
-        intent.putExtra("id", intent.getStringExtra("id"))
-        intent.putExtra("amount", amount)
+        intent.putExtra("id", drinkName)
+        intent.putExtra("amount", amount.toString())
         intent.putExtra("shot", shot)
         intent.putExtra("select", select)
         intent.putExtra("size", size)
         intent.putExtra("ice", ice)
-        intent.putExtra("totalPrice", total_price)
+        intent.putExtra("totalPrice", total_price.toString())
         startActivity(intent)
         finish()
     }

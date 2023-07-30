@@ -19,16 +19,16 @@
             style="?android:borderlessButtonStyle"
             android:layout_alignParentTop="true"
             android:layout_centerVertical="true"
-            android:onClick="goToHomePage"
+            android:onClick="actionBack"
             android:layout_marginTop="0dp"
-            android:contentDescription="Back to Home Icon"/>
+            android:contentDescription="@string/back_to_home_icon"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
-            android:text="Profile"
+            android:text="@string/profile"
             android:textSize="16sp"
             android:textColor="@color/faded_blue"
             android:layout_marginTop="0dp"
@@ -59,7 +59,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/small_profile"
-                    android:layout_margin="11sp"/>
+                    android:layout_margin="11sp"
+                    android:contentDescription="@string/edit_name_image"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -70,7 +71,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Full name"
+                        android:text="@string/full_name"
                         android:textColor="@color/faded_white"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_medium"
@@ -102,7 +103,7 @@
                 android:src="@drawable/edit"
                 style="?android:borderlessButtonStyle"
                 android:onClick="focusEditText"
-                android:contentDescription="Edit Name icon"/>
+                android:contentDescription="@string/edit_name_icon"/>
 
         </RelativeLayout>
 
@@ -123,7 +124,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/phone"
-                    android:layout_margin="11sp"/>
+                    android:layout_margin="11sp"
+                    android:contentDescription="@string/edit_phone_image"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -134,7 +136,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Phone"
+                        android:text="@string/phone"
                         android:textColor="@color/faded_white"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_medium"
@@ -166,7 +168,7 @@
                 android:src="@drawable/edit"
                 style="?android:borderlessButtonStyle"
                 android:onClick="focusEditText"
-                android:contentDescription="Edit Phone icon"/>
+                android:contentDescription="@string/edit_phone_icon"/>
 
         </RelativeLayout>
 
@@ -187,7 +189,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/email"
-                    android:layout_margin="11sp"/>
+                    android:layout_margin="11sp"
+                    android:contentDescription="@string/edit_email_image"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -198,7 +201,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email"
+                        android:text="@string/email_text"
                         android:textColor="@color/faded_white"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_medium"
@@ -230,7 +233,7 @@
                 android:src="@drawable/edit"
                 style="?android:borderlessButtonStyle"
                 android:onClick="focusEditText"
-                android:contentDescription="Edit Email icon"/>
+                android:contentDescription="@string/edit_email_icon"/>
 
         </RelativeLayout>
 
@@ -251,7 +254,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/location"
-                    android:layout_margin="11sp"/>
+                    android:layout_margin="11sp"
+                    android:contentDescription="@string/edit_address_image"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -262,7 +266,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Address"
+                        android:text="@string/address_text"
                         android:textColor="@color/faded_white"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_medium"
@@ -294,7 +298,7 @@
                 android:src="@drawable/edit"
                 style="?android:borderlessButtonStyle"
                 android:onClick="focusEditText"
-                android:contentDescription="Edit Address icon"/>
+                android:contentDescription="@string/edit_address_icon"/>
 
         </RelativeLayout>
 
