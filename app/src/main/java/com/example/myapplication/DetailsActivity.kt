@@ -3,14 +3,11 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.util.Size
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import org.w3c.dom.Text
 
 class DetailsActivity : AppCompatActivity() {
     private var amount = 1
@@ -22,7 +19,6 @@ class DetailsActivity : AppCompatActivity() {
     private var basePrice_l = 3.00
     private var basePrice_xl = 3.50
     private var total_price = 0.0
-    private val REQ_CODE = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -141,6 +137,7 @@ class DetailsActivity : AppCompatActivity() {
                 findViewById<ImageButton>(R.id.option_size_xl).setImageResource(R.drawable.size_xl_selected)
             }
         }
+        updateTotalAmount()
     }
 
     fun setIce(view: View) {
@@ -170,15 +167,24 @@ class DetailsActivity : AppCompatActivity() {
         when (size) {
             "Small" -> {
                 total_price = amount * basePrice_m
-                findViewById<TextView>(R.id.total_amount).text = "$" + (total_price).toString()
+                findViewById<TextView>(R.id.total_amount).text = buildString {
+        append("$")
+        append((total_price).toString())
+    }
             }
             "Medium" -> {
                 total_price = amount * basePrice_l
-                findViewById<TextView>(R.id.total_amount).text = "$" + (total_price).toString()
+                findViewById<TextView>(R.id.total_amount).text = buildString {
+        append("$")
+        append((total_price).toString())
+    }
             }
             "Large" -> {
                 total_price = amount * basePrice_xl
-                findViewById<TextView>(R.id.total_amount).text = "$" + (total_price).toString()
+                findViewById<TextView>(R.id.total_amount).text = buildString {
+        append("$")
+        append((total_price).toString())
+    }
             }
         }
     }
@@ -197,18 +203,7 @@ class DetailsActivity : AppCompatActivity() {
         intent.putExtra("size", size)
         intent.putExtra("ice", ice)
         intent.putExtra("totalPrice", total_price)
-        startActivityForResult(intent, REQ_CODE)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == REQ_CODE) {
-            if (data != null) {
-                if (data.getBooleanExtra("status", false)) {
-                    finish()
-                }
-            }
-        }
+        startActivity(intent)
+        finish()
     }
 }

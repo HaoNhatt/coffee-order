@@ -14,5 +14,6 @@ class OrderSuccessActivity : AppCompatActivity() {
     fun goToMyOrders(view: View) {
         val intent = Intent(this, MyOrderActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }

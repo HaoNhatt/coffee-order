@@ -11,13 +11,64 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
+//    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+//        if (it.resultCode == RESULT_OK) {
+//            val screen = it.data?.getStringExtra("screen") ?: ""
+//            when (screen) {
+//                "rewards" -> {
+//                    val intent = Intent(this, RewardActivity::class.java)
+//                    startForResult!!.launch(intent)
+//                }
+//                "myOrder" -> {
+//
+//                }
+//            }
+//        }
+//    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        settingNavigator()
         setLoyalCup()
+    }
+
+    private fun settingNavigator() {
+        val bottomNavigator = findViewById<BottomNavigationView>(R.id.bottom_navigator)
+        bottomNavigator.selectedItemId = R.id.button_home
+
+        bottomNavigator.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.button_home -> {
+                    true
+                }
+                R.id.button_reward -> {
+                    val intent = Intent(this, RewardActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.slide_right, R.anim.slide_left)
+                    finish()
+                    true
+                }
+                R.id.button_my_order -> {
+                    val intent = Intent(this, MyOrderActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.slide_right, R.anim.slide_left)
+                    finish()
+                    true
+                }
+
+                else -> {
+                    true
+                }
+            }
+        }
     }
 
     override fun onResume() {
@@ -82,7 +133,10 @@ class HomeActivity : AppCompatActivity() {
                 findViewById<ImageView>(R.id.loyal_cup_1).setImageResource(R.drawable.cup_on)
             }
         }
-        findViewById<TextView>(R.id.loyal_cup).text = "$loyalCup / 8"
+        findViewById<TextView>(R.id.loyal_cup).text = buildString {
+        append(loyalCup)
+        append(" / 8")
+    }
     }
 
     fun goToCart(view: View) {
@@ -95,15 +149,6 @@ class HomeActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun goToReward(view: View) {
-        val intent = Intent(this, RewardActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun goToMyOrders(view: View) {
-        val intent = Intent(this, MyOrderActivity::class.java)
-        startActivity(intent)
-    }
 
     fun details(view: View) {
         val intent = Intent(this, DetailsActivity::class.java)
